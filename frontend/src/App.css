@@ -1,0 +1,48 @@
+/* VipChatBot - Clean Animations Only */
+
+/* Floating animation for robot emoji */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Pulse animation for particles */
+@keyframes pulse-custom {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+/* Custom animation classes */
+.float-emoji {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-particle {
+  animation: pulse-custom 2s ease-in-out infinite;
+}
+
+/* Smooth transitions */
+.smooth-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.smooth-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Custom animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-2000 { animation-delay: 2s; }
