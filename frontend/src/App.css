@@ -1,48 +1,567 @@
-/* VipChatBot - Clean Animations Only */
+/* Zenith Comp AI Assistant - Corporate Enterprise Styling */
 
-/* Floating animation for robot emoji */
-@keyframes float {
+/* ===== Zenith Comp Brand Variables ===== */
+:root {
+  /* Primary Brand Colors */
+  --zenith-navy: #15206c;
+  --zenith-orange: #EB7C24;
+  
+  /* Navy Variants */
+  --zenith-navy-50: #f0f4ff;
+  --zenith-navy-100: #e6edfe;
+  --zenith-navy-200: #d0ddfc;
+  --zenith-navy-300: #aac2f7;
+  --zenith-navy-400: #7e9df1;
+  --zenith-navy-500: #15206c;
+  --zenith-navy-600: #1a237e;
+  --zenith-navy-700: #0f1b5c;
+  --zenith-navy-800: #0d1549;
+  --zenith-navy-900: #061349;
+  
+  /* Orange Variants */
+  --zenith-orange-50: #fff7ed;
+  --zenith-orange-100: #ffedd5;
+  --zenith-orange-200: #fed7aa;
+  --zenith-orange-300: #fdba74;
+  --zenith-orange-400: #fb923c;
+  --zenith-orange-500: #EB7C24;
+  --zenith-orange-600: #ea580c;
+  --zenith-orange-700: #c2410c;
+  --zenith-orange-800: #9a3412;
+  --zenith-orange-900: #7c2d12;
+  
+  /* Chat Interface Colors */
+  --zenith-chat-bg: #f8fafc;
+  --zenith-user-msg: linear-gradient(135deg, var(--zenith-orange-500), var(--zenith-orange-600));
+  --zenith-ai-msg-bg: #ffffff;
+  --zenith-ai-msg-border: #e2e8f0;
+  --zenith-system-msg: #eff6ff;
+  
+  /* Corporate Gradients */
+  --zenith-gradient: linear-gradient(135deg, var(--zenith-navy) 0%, var(--zenith-orange) 100%);
+  --zenith-navy-gradient: linear-gradient(135deg, var(--zenith-navy) 0%, var(--zenith-navy-600) 100%);
+  --zenith-orange-gradient: linear-gradient(135deg, var(--zenith-orange) 0%, var(--zenith-orange-600) 100%);
+  
+  /* Corporate Typography */
+  --zenith-font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --zenith-font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, Consolas, monospace;
+}
+
+/* ===== Corporate Landing Page Animations ===== */
+
+/* Zenith Logo floating animation */
+@keyframes zenithFloat {
   0%, 100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
-  50% {
-    transform: translateY(-10px);
+  33% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-4px) rotate(-1deg);
   }
 }
 
-/* Pulse animation for particles */
-@keyframes pulse-custom {
+/* Corporate pulse animation */
+@keyframes corporatePulse {
   0%, 100% {
-    opacity: 0.4;
+    opacity: 0.6;
     transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(21, 32, 108, 0.3);
   }
   50% {
-    opacity: 0.8;
-    transform: scale(1.2);
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(21, 32, 108, 0);
   }
 }
 
-/* Custom animation classes */
-.float-emoji {
-  animation: float 3s ease-in-out infinite;
+/* Enterprise glow effect */
+@keyframes enterpriseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(235, 124, 36, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(235, 124, 36, 0.6), 0 0 40px rgba(21, 32, 108, 0.2);
+  }
 }
 
-.pulse-particle {
-  animation: pulse-custom 2s ease-in-out infinite;
+/* Custom Corporate Animation Classes */
+.zenith-float {
+  animation: zenithFloat 4s ease-in-out infinite;
 }
 
-/* Smooth transitions */
-.smooth-hover {
+.corporate-pulse {
+  animation: corporatePulse 3s ease-in-out infinite;
+}
+
+.enterprise-glow {
+  animation: enterpriseGlow 2s ease-in-out infinite;
+}
+
+/* Professional hover effects */
+.zenith-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.smooth-hover:hover {
-  transform: translateY(-2px);
+.zenith-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(21, 32, 108, 0.2);
 }
 
-/* Custom animation delays */
+/* Corporate button interactions */
+.zenith-button {
+  background: var(--zenith-gradient);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.zenith-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s;
+}
+
+.zenith-button:hover::before {
+  left: 100%;
+}
+
+.zenith-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(21, 32, 108, 0.3);
+}
+
+/* Animation delays for staggered effects */
 .delay-100 { animation-delay: 0.1s; }
 .delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
 .delay-500 { animation-delay: 0.5s; }
 .delay-1000 { animation-delay: 1s; }
+.delay-1500 { animation-delay: 1.5s; }
 .delay-2000 { animation-delay: 2s; }
+
+/* ===== Enterprise Chat Interface Styles ===== */
+
+/* Corporate scrollbar styling */
+.zenith-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.zenith-scroll::-webkit-scrollbar-track {
+  background: var(--zenith-navy-50);
+  border-radius: 10px;
+}
+
+.zenith-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--zenith-navy-300), var(--zenith-orange-300));
+  border-radius: 10px;
+}
+
+.zenith-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(var(--zenith-navy-400), var(--zenith-orange-400));
+}
+
+/* Corporate message bubble animations */
+@keyframes zenithMessageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.zenith-message-enter {
+  animation: zenithMessageSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enterprise typing indicator */
+@keyframes zenithTypingPulse {
+  0%, 60%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+    background-color: var(--zenith-navy-400);
+  }
+  30% {
+    transform: scale(1.3);
+    opacity: 1;
+    background-color: var(--zenith-orange-500);
+  }
+}
+
+.zenith-typing-dot {
+  animation: zenithTypingPulse 1.6s infinite;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+}
+
+.zenith-typing-dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.zenith-typing-dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Corporate button interactions */
+.zenith-interactive {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zenith-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(21, 32, 108, 0.15);
+}
+
+.zenith-interactive:active {
+  transform: translateY(0);
+  transition: transform 0.1s;
+}
+
+/* Corporate input focus effects */
+.zenith-input:focus {
+  box-shadow: 0 0 0 3px rgba(21, 32, 108, 0.1);
+  border-color: var(--zenith-navy-500);
+}
+
+.zenith-input:focus-within {
+  box-shadow: 0 0 0 3px rgba(235, 124, 36, 0.1);
+  border-color: var(--zenith-orange-500);
+}
+
+/* Corporate message bubble styling */
+.zenith-user-bubble {
+  background: var(--zenith-user-msg);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  box-shadow: 0 4px 12px rgba(235, 124, 36, 0.2);
+  transition: all 0.2s ease;
+}
+
+.zenith-user-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(235, 124, 36, 0.3);
+}
+
+.zenith-ai-bubble {
+  background: var(--zenith-ai-msg-bg);
+  color: var(--zenith-navy-700);
+  border: 1px solid var(--zenith-ai-msg-border);
+  border-radius: 18px 18px 18px 4px;
+  box-shadow: 0 2px 8px rgba(21, 32, 108, 0.1);
+  transition: all 0.2s ease;
+}
+
+.zenith-ai-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(21, 32, 108, 0.15);
+  border-color: var(--zenith-navy-200);
+}
+
+/* Corporate avatar online status */
+@keyframes zenithStatusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.zenith-status-online {
+  animation: zenithStatusPulse 2.5s infinite;
+}
+
+/* Corporate loading spinner */
+@keyframes zenithSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.zenith-loading {
+  animation: zenithSpin 1s linear infinite;
+  border: 3px solid var(--zenith-navy-200);
+  border-top: 3px solid var(--zenith-orange-500);
+}
+
+/* Enterprise glass morphism */
+.zenith-glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(21, 32, 108, 0.1);
+  box-shadow: 0 8px 32px rgba(21, 32, 108, 0.1);
+}
+
+/* Corporate header backdrop blur */
+.zenith-header-blur {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(21, 32, 108, 0.1);
+}
+
+/* Professional page transitions */
+.zenith-page-transition {
+  animation: zenithSlideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes zenithSlideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Corporate gradient backgrounds */
+.zenith-bg-primary {
+  background: var(--zenith-gradient);
+}
+
+.zenith-bg-navy {
+  background: var(--zenith-navy-gradient);
+}
+
+.zenith-bg-orange {
+  background: var(--zenith-orange-gradient);
+}
+
+/* Enterprise shadow effects */
+.zenith-shadow-sm {
+  box-shadow: 0 2px 8px rgba(21, 32, 108, 0.1);
+}
+
+.zenith-shadow-md {
+  box-shadow: 0 4px 16px rgba(21, 32, 108, 0.12);
+}
+
+.zenith-shadow-lg {
+  box-shadow: 0 8px 32px rgba(21, 32, 108, 0.15);
+}
+
+.zenith-shadow-xl {
+  box-shadow: 0 16px 48px rgba(21, 32, 108, 0.2);
+}
+
+/* Corporate text gradients */
+.zenith-text-gradient {
+  background: var(--zenith-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.zenith-text-navy {
+  color: var(--zenith-navy-600);
+}
+
+.zenith-text-orange {
+  color: var(--zenith-orange-600);
+}
+
+/* ===== Responsive Corporate Design ===== */
+@media (max-width: 768px) {
+  .zenith-mobile-padding {
+    padding: 1.5rem;
+  }
+  
+  .zenith-mobile-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  .zenith-mobile-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .zenith-mobile-sm {
+    padding: 1rem;
+  }
+  
+  .zenith-mobile-sm .zenith-text-gradient {
+    font-size: 2rem;
+  }
+}
+
+/* ===== Accessibility & Performance ===== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .zenith-ai-bubble,
+  .zenith-user-bubble {
+    border: 2px solid currentColor;
+  }
+  
+  .zenith-button {
+    border: 2px solid var(--zenith-navy);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .zenith-float,
+  .corporate-pulse,
+  .enterprise-glow,
+  .zenith-message-enter,
+  .zenith-typing-dot,
+  .zenith-status-online,
+  .zenith-loading {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  
+  .zenith-hover,
+  .zenith-interactive,
+  .zenith-button {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus indicators for accessibility */
+.zenith-focus:focus-visible {
+  outline: 2px solid var(--zenith-orange-500);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Print styles for corporate documents */
+@media print {
+  .zenith-glass,
+  .zenith-header-blur {
+    background: white !important;
+    backdrop-filter: none !important;
+  }
+  
+  .zenith-gradient,
+  .zenith-bg-primary {
+    background: var(--zenith-navy) !important;
+    color: white !important;
+  }
+}
+
+/* ===== Corporate Brand Elements ===== */
+
+/* Zenith logo container */
+.zenith-logo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.zenith-logo-container::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background: var(--zenith-gradient);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.zenith-logo-container:hover::after {
+  opacity: 0.1;
+}
+
+/* Enterprise badge styling */
+.zenith-badge {
+  background: var(--zenith-gradient);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Corporate notification dot */
+.zenith-notification {
+  position: relative;
+}
+
+.zenith-notification::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: var(--zenith-orange-500);
+  border-radius: 50%;
+  border: 2px solid white;
+  animation: zenithStatusPulse 2s infinite;
+}
+
+/* ===== Utility Classes ===== */
+
+/* Zenith spacing utilities */
+.zenith-space-y-4 > * + * {
+  margin-top: 1rem;
+}
+
+.zenith-space-y-6 > * + * {
+  margin-top: 1.5rem;
+}
+
+/* Zenith flex utilities */
+.zenith-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zenith-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Zenith border utilities */
+.zenith-border {
+  border: 1px solid var(--zenith-navy-200);
+}
+
+.zenith-border-orange {
+  border: 1px solid var(--zenith-orange-200);
+}
+
+/* Corporate success indicator */
+.zenith-success {
+  color: #059669;
+  background-color: #d1fae5;
+  border-color: #a7f3d0;
+}
+
+/* Enterprise warning indicator */
+.zenith-warning {
+  color: #d97706;
+  background-color: #fef3c7;
+  border-color: #fde68a;
+}
+
+/* Corporate error indicator */
+.zenith-error {
+  color: #dc2626;
+  background-color: #fee2e2;
+  border-color: #fecaca;
+}
